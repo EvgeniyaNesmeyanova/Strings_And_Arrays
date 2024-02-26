@@ -15,11 +15,12 @@ public class StatsService {
 
     // 2 рассчитывает среднюю сумму продаж в месяц
     public long AverageSalesAmount(long[] sales) {
-        long amount = 0; // сумма всех продаж
+        // long amount = 0; // сумма всех продаж
 
-        for (int i = 0; i < sales.length; i++) {
-            amount = amount + sales[i];
-        }
+        // for (int i = 0; i < sales.length; i++) {
+        //     amount = amount + sales[i];
+        // }
+        long amount = amountSales(sales); //воспользовались вычислением сумммы продаж выше
 
         return amount / sales.length; // средняя сумма продаж
     }
@@ -54,12 +55,14 @@ public class StatsService {
     // 5 количество месяцев, в которых продажи были ниже среднего
     public int belowAverageSales(long[] sales) {
 
-        long amount = 0; // сумма всех продаж
+        // long amount = 0; // сумма всех продаж
 
-        for (int i = 0; i < sales.length; i++) {
-            amount = amount + sales[i];
-        }
-        long amountsr = amount / sales.length; //расчет среднего значения взят из 2
+        // for (int i = 0; i < sales.length; i++) {
+        //     amount = amount + sales[i];
+        // }
+        // long amountsr = amount / sales.length; //расчет среднего значения взят из 2
+
+        long amountsr = AverageSalesAmount(sales); //расчет среднего значения взят из 2
 
         int minMonth = 0; // счетчик месяцев с продажами ниже среднего
 
@@ -75,12 +78,14 @@ public class StatsService {
     // 6 количество месяцев, в которых продажи были выше среднего
     public int aboveAverageSales(long[] sales) {
 
-        long amount = 0; // сумма всех продаж
+        //long amount = 0; // сумма всех продаж
 
-        for (int i = 0; i < sales.length; i++) {
-            amount = amount + sales[i];
-        }
-        long amountsr = amount / sales.length; //расчет среднего значения взят из 2
+        // for (int i = 0; i < sales.length; i++) {
+        //     amount = amount + sales[i];
+        // }
+        // long amountsr = amount / sales.length; //расчет среднего значения взят из 2
+
+        long amountsr = AverageSalesAmount(sales); //расчет среднего значения взят из 2
 
         int maxMonth = 0; // счетчик месяцев с продажами выше среднего
 
